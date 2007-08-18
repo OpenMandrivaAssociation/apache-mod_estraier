@@ -6,7 +6,7 @@
 Summary:	An apache module that uses the API of Hyper Estraier
 Name:		apache-%{mod_name}
 Version:	0.3.2
-Release:	%mkrel 2
+Release:	%mkrel 3
 Group:		System/Servers
 License:	Apache License
 URL:		http://modestraier.sourceforge.net/
@@ -62,9 +62,6 @@ install -m0755 .libs/mod_estraier.so %{buildroot}%{_libdir}/apache-extramodules/
 
 bzcat %{SOURCE1} > %{buildroot}%{_sysconfdir}/httpd/modules.d/%{mod_conf}
 
-install -d %{buildroot}%{_var}/www/html/addon-modules
-ln -s ../../../..%{_docdir}/%{name}-%{version} %{buildroot}%{_var}/www/html/addon-modules/%{name}-%{version}
-
 %post
 if [ -f %{_var}/lock/subsys/httpd ]; then
     %{_initrddir}/httpd restart 1>&2;
@@ -87,6 +84,3 @@ fi
 %attr(0755,root,root) %{_libdir}/apache-extramodules/mod_estraier_cache.so
 %attr(0755,root,root) %{_libdir}/apache-extramodules/mod_estraier_search.so
 %attr(0755,root,root) %{_libdir}/apache-extramodules/mod_estraier.so
-%{_var}/www/html/addon-modules/*
-
-
