@@ -25,6 +25,7 @@ BuildRequires:	bzip2-devel
 BuildRequires:	libqdbm-devel
 BuildRequires:	libhyperestraier-devel
 BuildRequires:	libtidy-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 mod_estraier is an apache module that registers web pages processed by the
