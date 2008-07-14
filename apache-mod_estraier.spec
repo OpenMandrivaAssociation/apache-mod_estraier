@@ -6,7 +6,7 @@
 Summary:	An apache module that uses the API of Hyper Estraier
 Name:		apache-%{mod_name}
 Version:	0.3.2
-Release:	%mkrel 5
+Release:	%mkrel 6
 Group:		System/Servers
 License:	Apache License
 URL:		http://modestraier.sourceforge.net/
