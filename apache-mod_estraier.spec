@@ -6,12 +6,13 @@
 Summary:	An apache module that uses the API of Hyper Estraier
 Name:		apache-%{mod_name}
 Version:	0.3.2
-Release:	%mkrel 6
+Release:	%mkrel 7
 Group:		System/Servers
 License:	Apache License
 URL:		http://modestraier.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/modestraier/mod_estraier-%{version}.tar.bz2
 Source1:	%{mod_conf}.bz2
+Patch0:		mod_estraier-format_not_a_string_literal_and_no_format_arguments.diff
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
 Requires(pre):	apache-conf >= 2.0.54
@@ -36,6 +37,7 @@ Wiki or BBS is the main object of mod_estraier.
 %prep
 
 %setup -q -n %{mod_name}
+%patch0 -p0
 
 # strip away annoying ^M
 find . -type f|xargs file|grep 'CRLF'|cut -d: -f1|xargs perl -p -i -e 's/\r//'
