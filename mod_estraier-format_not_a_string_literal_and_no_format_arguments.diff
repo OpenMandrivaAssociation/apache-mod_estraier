@@ -1,0 +1,20 @@
+--- mod_estraier.c	2009-01-07 10:05:57.000000000 +0100
++++ mod_estraier.c.oden	2009-01-07 10:07:44.000000000 +0100
+@@ -573,7 +573,7 @@ static void *commit_estraier_db_p2p_thre
+ 
+   errmsg = commit_estraier_db_p2p_impl(cctx);
+   if (errmsg) {
+-    ap_log_error(APLOG_MARK, APLOG_ERR, 0, cctx->serv, errmsg);
++    ap_log_error(APLOG_MARK, APLOG_ERR, 0, cctx->serv, "%s", errmsg);
+   }
+ 
+   return NULL;
+@@ -608,7 +608,7 @@ static int commit_estraier_db_p2p(
+   errmsg = commit_estraier_db_p2p_impl(cctx);
+ 
+   if (errmsg) {
+-    ap_log_rerror(APLOG_MARK, APLOG_ERR, 0, f->r, errmsg);
++    ap_log_rerror(APLOG_MARK, APLOG_ERR, 0, f->r, "%s", errmsg);
+     return FALSE;
+   }
+ 
