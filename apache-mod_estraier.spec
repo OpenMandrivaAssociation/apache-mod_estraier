@@ -9,7 +9,7 @@ Version:	0.3.2
 Release:	%mkrel 9
 Group:		System/Servers
 License:	Apache License
-URL:		http://modestraier.sourceforge.net/
+URL:		https://modestraier.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/modestraier/mod_estraier-%{version}.tar.bz2
 Source1:	%{mod_conf}.bz2
 Patch0:		mod_estraier-format_not_a_string_literal_and_no_format_arguments.diff
