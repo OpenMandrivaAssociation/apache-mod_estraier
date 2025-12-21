@@ -19,6 +19,11 @@ Requires(pre):	apache-conf >= 2.0.54
 Requires(pre):	apache >= 2.0.54
 Requires:	apache-conf >= 2.0.54
 Requires:	apache >= 2.0.54
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	apache-devel >= 2.0.54
 BuildRequires:	file
 BuildRequires:	zlib-devel
